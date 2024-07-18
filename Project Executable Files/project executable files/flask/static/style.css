@@ -1,0 +1,27 @@
+body{
+    background-image: url('medico.jpg');
+    background-size: cover;
+}
+div{
+  background-color: black;
+  color:white;
+  height:60px;
+}
+a{
+    color:white;
+    float: right;
+    
+}
+hi{
+  display:inline-block;
+  margin-left: 100px;
+}
+inp{
+  margin-top: 10px;
+}
+lab{
+  font-size: 50px;
+}
+mydiv{
+  margin-inline: 5px;
+}

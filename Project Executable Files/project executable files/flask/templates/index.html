@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            padding: 10px 0;
+        }
+        #navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar a {
+            text-decoration: none;
+            font-size: 20px;
+            margin: 15px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        #navbar a:hover {
+            color: #ffdfba;
+        }
+        h1 {
+            color: #6d5dfc;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="navbar"> 
+            <a href="{{ url_for('about') }}">About Sepsis</a>
+            <a href="{{ url_for('predict') }}">Predict</a>   
+        </div> 
+    </header>
+    <h1><b>WELCOME TO SEPSIS SURVIVAL MINIMAL CLINICAL RECORDS!</b></h1>
+    <p>Sepsis is a serious condition in which the body responds improperly to an infection. The infection-fighting processes turn on the body, causing the organs to work poorly.</p>
+    <p>Sepsis may progress to septic shock. This is a dramatic drop in blood pressure that can damage the lungs, kidneys, liver, and other organs. When the damage is severe, it can lead to death.</p>
+    <p>Early treatment of sepsis improves chances for survival.</p>
+</body>
+</html>

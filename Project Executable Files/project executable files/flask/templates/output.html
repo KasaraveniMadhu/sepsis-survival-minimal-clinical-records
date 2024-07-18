@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body style="background-color: #68b6ba">
+    <header>
+        <div style="background-color: black; padding: 20px;">
+            <a href="{{ url_for('home') }}" style="color: white; text-decoration: none; float: right;">Home</a>
+            <a href="{{ url_for('predict') }}" style="color: white; text-decoration: none; float: right; margin-right: 20px;">Predict Again</a>
+        </div>
+    </header>
+    <h1 style="text-align: center;"><font color="blue" size="55px"><i>Prediction Result</i></font></h1>
+    <div style="text-align: center;">
+        <h2>The Patient is likey : <span style="color: red;"></span></h2>
+        {% if prediction == 'Dead' %}
+            <h1>Not Survived</h1>
+        {% elif prediction == 'Alive' %}
+            <h1>Survived</h1>
+        {% endif %}
+    </div>
+</body>
+</html>

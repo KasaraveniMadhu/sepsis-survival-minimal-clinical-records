@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            padding: 20px 0;
+        }
+        header div {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+        header a:hover {
+            color: #ffdfba;
+        }
+        h1 {
+            text-align: center;
+            color: #6d5dfc;
+            font-size: 36px;
+            margin-top: 30px;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="number"] {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+        }
+        input[type="submit"] {
+            background-color: rgb(83, 159, 240);
+            color: white;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: rgb(60, 120, 180);
+        }
+        .content {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .content img {
+            width: 100%;
+            max-width: 1400px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </header>
+    <div class="content">
+        <img src="{{ url_for('static', filename='predict.png') }}" alt="Prediction Banner">
+    </div>
+    <h1><i>Enter the following details to predict!!!...</i></h1>
+    <div style="text-align: center;">
+        <form action="{{ url_for('output') }}" method="POST"> 
+            <label for="age"><b>Age:</b></label>
+            <input id="age" name="age" type="number" required>
+            <br>
+            <label for="gender"><b>Gender:</b></label>
+            <input id="gender" name="gender" type="number" placeholder="0-male // 1-female" required>
+            <br>
+            <label for="episode_number"><b>Episode Number:</b></label>
+            <input id="episode_number" name="episode_number" type="number" placeholder="Enter number from 1-4" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
